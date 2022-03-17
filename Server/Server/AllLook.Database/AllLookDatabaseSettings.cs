@@ -11,5 +11,7 @@ namespace AllLook.Database
         public string ConnectionString { get; set; }
         public string DatabaseName { get; set; }
         public string ProductsCollectionName { get; set; }
+        public string TokenCollectionName { get; set; }
+        public string DeviceFlowAuthorizationCollectionName { get; set; }
     }
 }

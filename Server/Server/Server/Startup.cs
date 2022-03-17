@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AllLook.Database;
+using AllLook.Database.Interfaces;
+using AllLook.Database.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,7 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-
+using Server.Services;
 
 namespace Server
 {
@@ -28,8 +30,36 @@ namespace Server
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //http clients
+            services.AddHttpClient<ISearchCode, SearchCode>(c =>
+            {
+
+            });
+            services.AddHttpClient<ISearchServiceRefresh, SearchServiceRefresh>(c =>
+            {
+
+            });
+            services.AddHttpClient<ISearchService, SearchService>(c =>
+            {
+                c.BaseAddress = new Uri("https://allegro.pl/auth/oauth/token");
+
+            });
+            services.AddHttpClient<IAllegroService, AllegroService>(c =>
+            {
+                c.BaseAddress = new Uri("https://api.allegro.pl");
+                c.DefaultRequestHeaders.Add("Accept", "application/vnd.allegro.public.v1+json");
+            });
+
+
+
+            //json settings
+
             services.Configure<AllLookDatabaseSettings>(Configuration.GetSection("AllLookDatabaseSettings"));
+            services.Configure<ClientSettings>(Configuration.GetSection("Client"));
+            //database
             services.AddSingleton<IDatabaseProductService, DatabaseProductService>();
+            services.AddSingleton<IDatabaseDeviceFlowAuthorization, DatabaseDeviceFlowAuthorization>();
+            services.AddSingleton<IDatabaseTokenService, DatabaseTokenService>();
            
             services.AddControllers();
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "Server", Version = "v1"}); });

@@ -344,6 +344,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Microsoft.Extensions.Options": "6.0.0",
+          "Models": "1.0.0",
           "MongoDB.Driver": "2.15.0"
         },
         "compile": {
@@ -351,6 +352,19 @@
         },
         "runtime": {
           "bin/placeholder/AllLook.Database.dll": {}
+        }
+      },
+      "Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "MongoDB.Bson": "2.15.0"
+        },
+        "compile": {
+          "bin/placeholder/Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Models.dll": {}
         }
       }
     }
@@ -923,11 +937,17 @@
       "type": "project",
       "path": "../AllLook.Database/AllLook.Database.csproj",
       "msbuildProject": "../AllLook.Database/AllLook.Database.csproj"
+    },
+    "Models/1.0.0": {
+      "type": "project",
+      "path": "../Models/Models.csproj",
+      "msbuildProject": "../Models/Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "AllLook.Database >= 1.0.0",
+      "Models >= 1.0.0",
       "MongoDB.Driver >= 2.15.0",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
@@ -966,6 +986,9 @@
           "projectReferences": {
             "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\AllLook.Database\\AllLook.Database.csproj": {
               "projectPath": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\AllLook.Database\\AllLook.Database.csproj"
+            },
+            "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Models\\Models.csproj"
             }
           }
         }

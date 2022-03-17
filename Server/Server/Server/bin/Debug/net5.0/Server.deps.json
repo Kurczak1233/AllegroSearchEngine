@@ -34,6 +34,7 @@
       "Server/1.0.0": {
         "dependencies": {
           "AllLook.Database": "1.0.0",
+          "Models": "1.0.0",
           "MongoDB.Driver": "2.15.0",
           "Swashbuckle.AspNetCore": "5.6.3",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
@@ -589,6 +590,7 @@
       "AllLook.Database/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Options": "6.0.0",
+          "Models": "1.0.0",
           "MongoDB.Driver": "2.15.0"
         },
         "runtime": {
@@ -596,6 +598,17 @@
         },
         "compile": {
           "AllLook.Database.dll": {}
+        }
+      },
+      "Models/1.0.0": {
+        "dependencies": {
+          "MongoDB.Bson": "2.15.0"
+        },
+        "runtime": {
+          "Models.dll": {}
+        },
+        "compile": {
+          "Models.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -2428,6 +2441,11 @@
       "hashPath": "system.security.principal.windows.5.0.0.nupkg.sha512"
     },
     "AllLook.Database/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
