@@ -21,9 +21,6 @@ namespace AllLook.Database.Services
 
         }
 
-
-
-
         public Token GetToken() => _token.Find(token => true).Single();
         public void AddToken(Token token) => _token.InsertOne(token);
         public void DropToken() => _token.DeleteMany(x => true);

@@ -8,7 +8,8 @@ namespace Server.Services
 {
    public interface ISearchServiceRefresh
     {
-        public  Task<Token> GetRefreshToken(string token, string ClientId, string ClientSecret);
+        public Task<Token> GetRefreshToken(string token, string ClientId, string ClientSecret);
 
+        public Task<Token> GetAccessTokenByRefreshToken(string ClientId, string ClientSecret, string RefreshToken);
     }
 }
