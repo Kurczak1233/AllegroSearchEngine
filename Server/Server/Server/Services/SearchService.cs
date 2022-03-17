@@ -22,21 +22,9 @@ namespace Server.Services
 
             public async Task<Token> GetToken(string deviceCode,string clientId,string clientSecret)
             {
+                var url = new Uri($"https://allegro.pl/auth/oauth/token?grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code&device_code={deviceCode}");
 
-
-
-             var url = new Uri($"https://allegro.pl/auth/oauth/token?grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code&device_code={deviceCode}");
-
-
-
-
-            // var content = new StringContent($"grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code&device_code={deviceCode}", Encoding.UTF8, "application/x-www-form-urlencoded");
-
-
-
-
-
-
+                // var content = new StringContent($"grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code&device_code={deviceCode}", Encoding.UTF8, "application/x-www-form-urlencoded");
 
             //var request = new HttpRequestMessage(HttpMethod.Post, "");
 
@@ -69,26 +57,9 @@ namespace Server.Services
             authResult.ExpiredDateTime = DateTime.Now.AddSeconds(authResult.expires_in);
            
             return authResult;
+            }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        }
-
-        private string pobierzParametryAutoryzacji(string idKlienta, string sekretneIdKlienta)
+            private string pobierzParametryAutoryzacji(string idKlienta, string sekretneIdKlienta)
         {
             string idks = idKlienta + ":" + sekretneIdKlienta;
             byte[] bajty = Encoding.UTF8.GetBytes(idks);

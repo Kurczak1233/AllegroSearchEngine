@@ -39,10 +39,6 @@ namespace Server.Services
 
             return authResult;
 
-
-
-
-           
         }
         private string pobierzParametryAutoryzacji(string idKlienta, string sekretneIdKlienta)
         {
