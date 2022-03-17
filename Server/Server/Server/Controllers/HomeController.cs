@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using AllLook.Database;
@@ -22,12 +24,8 @@ namespace Server.Controllers
         private readonly IDatabaseDeviceFlowAuthorization _deviceFlowAuth;
         private readonly IDatabaseTokenService _databaseTokenService;
         private readonly IDatabaseProductService _databaseProductService;
-
         private readonly IOptions<ClientSettings> _client;
-    
-      
-        
-
+        private readonly HttpClient _httpClient;
 
         public HomeController(ISearchService searchService,
             IAllegroService allegroService,
@@ -35,9 +33,10 @@ namespace Server.Controllers
             ISearchServiceRefresh searchServiceRefresh,
             IOptions<ClientSettings> options,
             IDatabaseDeviceFlowAuthorization deviceFlowAuth,
-             IDatabaseTokenService databaseTokenService,
-             IDatabaseProductService databaseProductService
-            )
+            IDatabaseTokenService databaseTokenService,
+            IDatabaseProductService databaseProductService,
+            HttpClient httpClient
+        )
         {
             _searchService = searchService;
             _allegroService = allegroService;
@@ -47,21 +46,19 @@ namespace Server.Controllers
             _deviceFlowAuth = deviceFlowAuth;
             _databaseTokenService = databaseTokenService;
             _databaseProductService = databaseProductService;
+            _httpClient = httpClient;
         }
-
-
+        
         [HttpGet(nameof(GetAuthorization))]
         public async Task<string> GetAuthorization()
         {
             var DeviceFlowAuth = await _searchCode.GetCode(_client.Value.ClientId,_client.Value.ClientSecret);
               _deviceFlowAuth.DropDeviceFlowAuth();
              _deviceFlowAuth.AddDeviceFlowAuth(DeviceFlowAuth);
-           
-
+             
             return DeviceFlowAuth.verification_uri_complete;
-
-
         }
+        
         [HttpGet(nameof(GetRefreshToken))]
         public async Task<Token> GetRefreshToken()
         {
@@ -70,8 +67,17 @@ namespace Server.Controllers
             _databaseTokenService.DropToken();
             _databaseTokenService.AddToken(newToken);
             return newToken;
-
-
+        }
+        
+        [HttpGet(nameof(GetAccessTokenByRefreshToken))]
+        public async Task<Token> GetAccessTokenByRefreshToken()
+        {
+            Token _token = _databaseTokenService.GetToken();
+          
+            var newToken = await _searchServiceRefresh.GetAccessTokenByRefreshToken(_client.Value.ClientId, _client.Value.ClientSecret, _token.refresh_token);
+            _databaseTokenService.DropToken();
+            _databaseTokenService.AddToken(newToken);
+            return newToken;
         }
 
         //[HttpGet(nameof(GetCategories))]
@@ -87,15 +93,22 @@ namespace Server.Controllers
 
         public async Task<List<Products>> GetProducts(string phrase)
         {
-
             Token _token = _databaseTokenService.GetToken();
-
-
-            var newProducts = await _allegroService.GetProducts(phrase, _token.access_token);
-            _databaseProductService.DropProductsCollection();
-            _databaseProductService.AddProductsCollection(newProducts.ToList());
-
-            return newProducts.ToList();
+            if (_token.ExpiredDateTime < DateTime.Now)
+            {
+                var newProducts = await _allegroService.GetProducts(phrase, _token.access_token);
+                _databaseProductService.DropProductsCollection();
+                _databaseProductService.AddProductsCollection(newProducts.ToList());
+                return newProducts.ToList();
+            }
+            else
+            {
+                GetAccessTokenByRefreshToken();
+                var newProducts = await _allegroService.GetProducts(phrase, _token.access_token);
+                _databaseProductService.DropProductsCollection();
+                _databaseProductService.AddProductsCollection(newProducts.ToList());
+                return newProducts.ToList();
+            }
         }
 
 
@@ -103,11 +116,8 @@ namespace Server.Controllers
 
         public async Task<Token> GetToken()
         {
-
             Token _token;
-
-          
-
+            
             string _deviceCode = _deviceFlowAuth.GetDeviceCode();
             _token = await _searchService.GetToken(_deviceCode, _client.Value.ClientId, _client.Value.ClientSecret);
             _databaseTokenService.DropToken();
