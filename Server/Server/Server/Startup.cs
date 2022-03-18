@@ -35,10 +35,6 @@ namespace Server
             {
 
             });
-            services.AddHttpClient<ISearchServiceRefresh, SearchServiceRefresh>(c =>
-            {
-
-            });
             services.AddHttpClient<ISearchService, SearchService>(c =>
             {
                 c.BaseAddress = new Uri("https://allegro.pl/auth/oauth/token");

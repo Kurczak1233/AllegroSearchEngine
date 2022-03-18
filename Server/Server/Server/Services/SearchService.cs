@@ -19,6 +19,13 @@ namespace Server.Services
             {
                 _httpClient = httpClient;
             }
+            
+            public string GetAuthorizationParameters(string ClientID, string ClientSecretKey)
+            {
+                string headerAuthorization = ClientID + ":" + ClientSecretKey;
+                byte[] bites = Encoding.UTF8.GetBytes(headerAuthorization);
+                return "Basic " + Convert.ToBase64String(bites);
+            }
 
             public async Task<Token> GetToken(string deviceCode,string clientId,string clientSecret)
             {
@@ -39,7 +46,7 @@ namespace Server.Services
 
             //var response = await _httpClient.SendAsync(request);
            
-            var pOauth = pobierzParametryAutoryzacji(clientId, clientSecret);
+            var pOauth = GetAuthorizationParameters(clientId, clientSecret);
 
 
             HttpClient klient = new HttpClient();
@@ -55,16 +62,28 @@ namespace Server.Services
             using var responseStream = await response.Content.ReadAsStreamAsync();
             var authResult = await JsonSerializer.DeserializeAsync<Token>(responseStream);
             authResult.ExpiredDateTime = DateTime.Now.AddSeconds(authResult.expires_in);
-           
+
             return authResult;
             }
+            
+            public async Task<Token> GetAccessTokenByRefreshToken(string clientId, string clientSecret, string refreshToken)
+            {
+                var url = new Uri($"https://allegro.pl/auth/oauth/token?grant_type=refresh_token&refresh_token={refreshToken}&redirect_uri=https://localhost:5000");
+                var p0auth = GetAuthorizationParameters(clientId, clientSecret);
+            
+                _httpClient.DefaultRequestHeaders.Clear();
+                _httpClient.DefaultRequestHeaders.Add("Authorization", p0auth);
+            
+                var content = new StringContent("", Encoding.UTF8, "application/x-ww-form-urlencoded");
+                var response = await _httpClient.PostAsync(url, content);
 
-            private string pobierzParametryAutoryzacji(string idKlienta, string sekretneIdKlienta)
-        {
-            string idks = idKlienta + ":" + sekretneIdKlienta;
-            byte[] bajty = Encoding.UTF8.GetBytes(idks);
-            return "Basic " + Convert.ToBase64String(bajty);
+                response.EnsureSuccessStatusCode();
+            
+                using var responseStream = await response.Content.ReadAsStreamAsync();
+                var authResult = await JsonSerializer.DeserializeAsync<Token>(responseStream);
+                authResult.ExpiredDateTime = DateTime.Now.AddSeconds(authResult.expires_in);
+                return authResult;
+            }
         }
-    }
     
 }
