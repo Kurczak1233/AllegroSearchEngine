@@ -47,8 +47,9 @@ namespace Server.Services
             using var responseStream = await response.Content.ReadAsStreamAsync();
 
             var responseObject = await JsonSerializer.DeserializeAsync<GetProductsResult>(responseStream);
-            List<Parameter> mainParam = responseObject?.products.Select(x => x.parameters.First()).ToList();
-            //  var  = mainParam.Select(x => x.id);
+            List<Parameter> mainParam = responseObject?.products.Select(x => x.parameters.Where(x => x.rangeValue is null )).FirstOrDefault().ToList();
+            // List<Parameter> mainParam = responseObject?.products.Select(x => x.parameters.First()).ToList();
+            
 
             return responseObject?.products?.Select(i => new Products()
             {
@@ -56,8 +57,10 @@ namespace Server.Services
                 Name = i.name,
                 Category = i.category.id,
                 Images = i.images.Select(x => x.url).FirstOrDefault(),
-                Parameters = i.parameters.FirstOrDefault(x => x.id == mainParam.Select(x => x.id).First())
+                Parameters = i.parameters.Where(x=>x.id == mainParam.Select(x=>x.id).FirstOrDefault()|| x.id == mainParam.Select(x => x.id).Reverse().FirstOrDefault()).ToList()
+                
             });
+         
 
         }
 

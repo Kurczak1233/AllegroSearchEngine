@@ -1,25 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Dane\\Semestr_6\\PZPP\\Searcher_GIT\\AllegroSearchEngine\\Server\\Server\\Server\\Server.csproj": {}
+    "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Server\\Server.csproj": {}
   },
   "projects": {
-    "E:\\Dane\\Semestr_6\\PZPP\\Searcher_GIT\\AllegroSearchEngine\\Server\\Server\\AllLook.Database\\AllLook.Database.csproj": {
+    "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\AllLook.Database\\AllLook.Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Dane\\Semestr_6\\PZPP\\Searcher_GIT\\AllegroSearchEngine\\Server\\Server\\AllLook.Database\\AllLook.Database.csproj",
+        "projectUniqueName": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\AllLook.Database\\AllLook.Database.csproj",
         "projectName": "AllLook.Database",
-        "projectPath": "E:\\Dane\\Semestr_6\\PZPP\\Searcher_GIT\\AllegroSearchEngine\\Server\\Server\\AllLook.Database\\AllLook.Database.csproj",
-        "packagesPath": "C:\\Users\\Jakub\\.nuget\\packages\\",
-        "outputPath": "E:\\Dane\\Semestr_6\\PZPP\\Searcher_GIT\\AllegroSearchEngine\\Server\\Server\\AllLook.Database\\obj\\",
+        "projectPath": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\AllLook.Database\\AllLook.Database.csproj",
+        "packagesPath": "C:\\Users\\48502\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\AllLook.Database\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Jakub\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\48502\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -32,8 +32,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "E:\\Dane\\Semestr_6\\PZPP\\Searcher_GIT\\AllegroSearchEngine\\Server\\Server\\Models\\Models.csproj": {
-                "projectPath": "E:\\Dane\\Semestr_6\\PZPP\\Searcher_GIT\\AllegroSearchEngine\\Server\\Server\\Models\\Models.csproj"
+              "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Models\\Models.csproj"
               }
             }
           }
@@ -72,26 +72,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Dane\\Semestr_6\\PZPP\\Searcher_GIT\\AllegroSearchEngine\\Server\\Server\\Models\\Models.csproj": {
+    "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Dane\\Semestr_6\\PZPP\\Searcher_GIT\\AllegroSearchEngine\\Server\\Server\\Models\\Models.csproj",
+        "projectUniqueName": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "E:\\Dane\\Semestr_6\\PZPP\\Searcher_GIT\\AllegroSearchEngine\\Server\\Server\\Models\\Models.csproj",
-        "packagesPath": "C:\\Users\\Jakub\\.nuget\\packages\\",
-        "outputPath": "E:\\Dane\\Semestr_6\\PZPP\\Searcher_GIT\\AllegroSearchEngine\\Server\\Server\\Models\\obj\\",
+        "projectPath": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\48502\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Jakub\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\48502\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -136,26 +136,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Dane\\Semestr_6\\PZPP\\Searcher_GIT\\AllegroSearchEngine\\Server\\Server\\Server\\Server.csproj": {
+    "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Dane\\Semestr_6\\PZPP\\Searcher_GIT\\AllegroSearchEngine\\Server\\Server\\Server\\Server.csproj",
+        "projectUniqueName": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "E:\\Dane\\Semestr_6\\PZPP\\Searcher_GIT\\AllegroSearchEngine\\Server\\Server\\Server\\Server.csproj",
-        "packagesPath": "C:\\Users\\Jakub\\.nuget\\packages\\",
-        "outputPath": "E:\\Dane\\Semestr_6\\PZPP\\Searcher_GIT\\AllegroSearchEngine\\Server\\Server\\Server\\obj\\",
+        "projectPath": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Server\\Server.csproj",
+        "packagesPath": "C:\\Users\\48502\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Jakub\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\48502\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -168,11 +168,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "E:\\Dane\\Semestr_6\\PZPP\\Searcher_GIT\\AllegroSearchEngine\\Server\\Server\\AllLook.Database\\AllLook.Database.csproj": {
-                "projectPath": "E:\\Dane\\Semestr_6\\PZPP\\Searcher_GIT\\AllegroSearchEngine\\Server\\Server\\AllLook.Database\\AllLook.Database.csproj"
+              "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\AllLook.Database\\AllLook.Database.csproj": {
+                "projectPath": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\AllLook.Database\\AllLook.Database.csproj"
               },
-              "E:\\Dane\\Semestr_6\\PZPP\\Searcher_GIT\\AllegroSearchEngine\\Server\\Server\\Models\\Models.csproj": {
-                "projectPath": "E:\\Dane\\Semestr_6\\PZPP\\Searcher_GIT\\AllegroSearchEngine\\Server\\Server\\Models\\Models.csproj"
+              "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Models\\Models.csproj"
               }
             }
           }
@@ -214,7 +214,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

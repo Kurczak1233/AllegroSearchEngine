@@ -8,6 +8,6 @@ namespace Models
         public string Name { get; set; }
         public string Category { get; set; }
         public string Images { get; set; }
-        public Parameter Parameters { get; set; }
+        public List<Parameter> Parameters { get; set; }
     }
 }
