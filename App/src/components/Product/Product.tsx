@@ -17,18 +17,6 @@ const Product = ({ product }: IProduct) => {
       <div className="product__description">
         <div>{product.name}</div>
         <div>Category: {product.category}</div>
-        <div>
-          Description:&nbsp; <br />
-          {product.parameters.map((item) => (
-            <React.Fragment key={item.id}>
-              <span>
-                {/* {item.name}:&nbsp;{item.unit}
-                {item.values[0]} */}
-              </span>
-              <br />
-            </React.Fragment>
-          ))}
-        </div>
       </div>
     </div>
   );
