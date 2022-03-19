@@ -19,8 +19,28 @@
         box-sizing: border-box;
         border-radius: 6px;
         height: 50px;
-        width: 890px;
+        width: 810px;
         padding: 8px;
+    }
+    .home-page__find-button {
+        cursor: pointer;
+        min-width: 94px;
+        height: 50px;
+        font-family: "Lato";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 26px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        background: #ff7b33;
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 25px;
+        margin-left: 21px;
     }
 }
 .home-page__main {
@@ -28,10 +48,10 @@
     justify-content: space-evenly;
     width: 100%;
     background: #eceff1;
-    height: 100%;
     .home-page__main-content {
         background: #ffffff;
         width: 890px;
         margin-top: 146px;
+        padding: 16px;
     }
 }
