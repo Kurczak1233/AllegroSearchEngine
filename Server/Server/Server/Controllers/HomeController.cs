@@ -68,8 +68,7 @@ namespace Server.Controllers
         }
         
 
-        [HttpGet(nameof(GetProducts))]
-
+        [HttpGet("GetProducts/{phrase}")]
         public async Task<List<Products>> GetProducts(string phrase)
         {
             Token _token = _databaseTokenService.GetToken();

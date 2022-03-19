@@ -1,0 +1,37 @@
+.home-page__header {
+    background-color: #fefefe;
+    height: 100px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 16px 0;
+    top: 0;
+    .home-page__logo {
+        position: fixed;
+        left: 30px;
+        top: 20px;
+    }
+    .home-page__search-input {
+        background: #fefefe;
+        border: 1px solid #dddddd;
+        box-sizing: border-box;
+        border-radius: 6px;
+        height: 50px;
+        width: 890px;
+        padding: 8px;
+    }
+}
+.home-page__main {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    background: #eceff1;
+    height: 100%;
+    .home-page__main-content {
+        background: #ffffff;
+        width: 890px;
+        margin-top: 146px;
+    }
+}

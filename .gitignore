@@ -1,4 +1,4 @@
-*.swp
+﻿*.swp
 project.lock.json
 .DS_Store
 *.pyc
@@ -31,3 +31,5 @@ bld/
 msbuild.log
 msbuild.err
 msbuild.wrn
+Server/Server/Server/bin/
+Server/Server/Server/obj/

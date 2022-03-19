@@ -30,6 +30,7 @@ namespace Server
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
             //http clients
             services.AddHttpClient<ISearchCode, SearchCode>(c =>
             {
@@ -46,10 +47,7 @@ namespace Server
                 c.DefaultRequestHeaders.Add("Accept", "application/vnd.allegro.public.v1+json");
             });
 
-
-
             //json settings
-
             services.Configure<AllLookDatabaseSettings>(Configuration.GetSection("AllLookDatabaseSettings"));
             services.Configure<ClientSettings>(Configuration.GetSection("Client"));
             //database
@@ -59,6 +57,8 @@ namespace Server
            
             services.AddControllers();
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "Server", Version = "v1"}); });
+            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -70,7 +70,17 @@ namespace Server
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Server v1"));
             }
+            
+            //Cors settings
+            app.UseCors(builder =>
+            {
+                builder
+                    .AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+            });
 
+            
             app.UseHttpsRedirection();
 
             app.UseRouting();
