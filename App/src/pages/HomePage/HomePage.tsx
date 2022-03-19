@@ -2,8 +2,10 @@ import "./HomePage.scss";
 import Logo from "../../icons/Logo.svg";
 import HomePageLogic from "./HomePageLogic";
 import Product from "../../components/Product/Product";
+import React from "react";
 const HomePage = () => {
-  const { apiCallResult, setPhrase, handleSearchClick } = HomePageLogic();
+  const { apiCallResult, setPhrase, handleSearchClick, isLoading } =
+    HomePageLogic();
   return (
     <>
       <header className="home-page__header">
@@ -20,9 +22,15 @@ const HomePage = () => {
       </header>
       <main className="home-page__main">
         <div className="home-page__main-content">
-          {apiCallResult.map((product) => (
-            <Product key={product.id} product={product} />
-          ))}
+          {isLoading ? (
+            <div>Loading...</div>
+          ) : (
+            <React.Fragment>
+              {apiCallResult.map((product) => (
+                <Product key={product.id} product={product} />
+              ))}
+            </React.Fragment>
+          )}
         </div>
       </main>
     </>
