@@ -47,7 +47,7 @@ namespace Server.Controllers
             _httpClient = httpClient;
         }
         
-        [HttpGet(nameof(GetAuthorization))]
+        [HttpGet("GetAuthorization")]
         public async Task<string> GetAuthorization()
         {
             var DeviceFlowAuth = await _searchCode.GetCode(_client.Value.ClientId,_client.Value.ClientSecret);
@@ -57,7 +57,7 @@ namespace Server.Controllers
             return DeviceFlowAuth.verification_uri_complete;
         }
 
-        [HttpGet(nameof(GetAccessTokenByRefreshToken))]
+        [HttpGet("GetAccessTokenByRefreshToken/")]
         public async Task<Token> GetAccessTokenByRefreshToken()
         {
             Token _token = _databaseTokenService.GetToken();
@@ -67,7 +67,7 @@ namespace Server.Controllers
             _databaseTokenService.AddToken(newToken);
             return newToken;
         }
-        internal async void DatabaseReplace(IEnumerable<Products> products)
+        internal async void ReplaceDataInDatabase(IEnumerable<Products> products)
         {
             _databaseProductService.DropProductsCollection();
             _databaseProductService.AddProductsCollection(products.ToList());
@@ -81,19 +81,19 @@ namespace Server.Controllers
             
             if (_token.ExpiredDateTime > DateTime.Now)
             {
-                DatabaseReplace(newProducts);
+                ReplaceDataInDatabase(newProducts);
                 return newProducts.ToList();
             }
             else
             {
                 await GetAccessTokenByRefreshToken();
-                DatabaseReplace(newProducts);
+                ReplaceDataInDatabase(newProducts);
                 return newProducts.ToList();
             }
         }
 
 
-        [HttpGet(nameof(GetToken))]
+        [HttpGet("GetToken/")]
 
         public async Task<Token> GetToken()
         {

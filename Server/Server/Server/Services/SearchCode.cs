@@ -21,7 +21,7 @@ namespace Server.Services
         public async Task<DeviceFlowAuth> GetCode(string clientId, string clientSecret)
         {
             var url = new Uri("https://allegro.pl/auth/oauth/device");
-            var pOauth = pobierzParametryAutoryzacji(clientId, clientSecret);
+            var pOauth = GetAuthorizationParameters(clientId, clientSecret);
         
 
             HttpClient klient = new HttpClient();
@@ -40,11 +40,11 @@ namespace Server.Services
             return authResult;
 
         }
-        private string pobierzParametryAutoryzacji(string idKlienta, string sekretneIdKlienta)
+        public string GetAuthorizationParameters(string ClientID, string ClientSecretKey)
         {
-            string idks = idKlienta + ":" + sekretneIdKlienta;
-            byte[] bajty = Encoding.UTF8.GetBytes(idks);
-            return "Basic " + Convert.ToBase64String(bajty);
+            string headerAuthorization = ClientID + ":" + ClientSecretKey;
+            byte[] bites = Encoding.UTF8.GetBytes(headerAuthorization);
+            return "Basic " + Convert.ToBase64String(bites);
         }
     }
 }
