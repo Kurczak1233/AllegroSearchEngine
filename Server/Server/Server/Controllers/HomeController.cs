@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using AllLook.Database;
 using AllLook.Database.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Models;
@@ -46,7 +47,7 @@ namespace Server.Controllers
             _httpClient = httpClient;
         }
         
-        [HttpGet(nameof(GetAuthorization))]
+        [HttpGet("GetAuthorization")]
         public async Task<string> GetAuthorization()
         {
             var DeviceFlowAuth = await _searchCode.GetCode(_client.Value.ClientId,_client.Value.ClientSecret);
@@ -56,7 +57,7 @@ namespace Server.Controllers
             return DeviceFlowAuth.verification_uri_complete;
         }
 
-        [HttpGet(nameof(GetAccessTokenByRefreshToken))]
+        [HttpGet("GetAccessTokenByRefreshToken/")]
         public async Task<Token> GetAccessTokenByRefreshToken()
         {
             Token _token = _databaseTokenService.GetToken();
@@ -66,31 +67,33 @@ namespace Server.Controllers
             _databaseTokenService.AddToken(newToken);
             return newToken;
         }
-        
+        internal async void ReplaceDataInDatabase(IEnumerable<Products> products)
+        {
+            _databaseProductService.DropProductsCollection();
+            _databaseProductService.AddProductsCollection(products.ToList());
+        }
 
         [HttpGet("GetProducts/{phrase}")]
         public async Task<List<Products>> GetProducts(string phrase)
         {
             Token _token = _databaseTokenService.GetToken();
+            var newProducts = await _allegroService.GetProducts(phrase, _token.access_token);
+            
             if (_token.ExpiredDateTime > DateTime.Now)
             {
-                var newProducts = await _allegroService.GetProducts(phrase, _token.access_token);
-                _databaseProductService.DropProductsCollection();
-                _databaseProductService.AddProductsCollection(newProducts.ToList());
+                ReplaceDataInDatabase(newProducts);
                 return newProducts.ToList();
             }
             else
             {
-                GetAccessTokenByRefreshToken();
-                var newProducts = await _allegroService.GetProducts(phrase, _token.access_token);
-                _databaseProductService.DropProductsCollection();
-                _databaseProductService.AddProductsCollection(newProducts.ToList());
+                await GetAccessTokenByRefreshToken();
+                ReplaceDataInDatabase(newProducts);
                 return newProducts.ToList();
             }
         }
 
 
-        [HttpGet(nameof(GetToken))]
+        [HttpGet("GetToken/")]
 
         public async Task<Token> GetToken()
         {
