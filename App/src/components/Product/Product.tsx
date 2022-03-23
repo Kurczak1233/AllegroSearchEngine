@@ -17,6 +17,11 @@ const Product = ({ product }: IProduct) => {
       <div className="product__description">
         <div>{product.name}</div>
         <div>Category: {product.category}</div>
+        {product.parameters.map((parameter) => (
+          <div key={parameter.id}>
+            {parameter.name}:&nbsp;{parameter.valuesLabels[0]}
+          </div>
+        ))}
       </div>
     </div>
   );
