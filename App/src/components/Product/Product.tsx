@@ -9,7 +9,7 @@ interface IProduct {
 
 const Product = ({ product }: IProduct) => {
   return (
-    <div className="product__wrapper">
+    <div className="product__wrapper" role="product-wrapper">
       <img
         src={product.images ? product.images : PlaceholderImage}
         className="product__image"

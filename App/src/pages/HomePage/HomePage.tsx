@@ -21,7 +21,7 @@ const HomePage = () => {
         </div>
       </header>
       <main className="home-page__main">
-        <div className="home-page__main-content">
+        <div className="home-page__main-content" role="main-content">
           {isLoading ? (
             <div>Loading...</div>
           ) : (
