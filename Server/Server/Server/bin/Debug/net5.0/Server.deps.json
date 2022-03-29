@@ -34,6 +34,7 @@
       "Server/1.0.0": {
         "dependencies": {
           "AllLook.Database": "1.0.0",
+          "Microsoft.AspNetCore.Cors": "2.2.0",
           "Models": "1.0.0",
           "MongoDB.Driver": "2.15.0",
           "Swashbuckle.AspNetCore": "5.6.3",
@@ -52,7 +53,7 @@
           "Microsoft.AspNetCore.Components.Web": "5.0.0.0",
           "Microsoft.AspNetCore.Connections.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.CookiePolicy": "5.0.0.0",
-          "Microsoft.AspNetCore.Cors": "5.0.0.0",
+          "Microsoft.AspNetCore.Cors.Reference": "5.0.0.0",
           "Microsoft.AspNetCore.Cryptography.Internal": "5.0.0.0",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "5.0.0.0",
           "Microsoft.AspNetCore.DataProtection.Abstractions": "5.0.0.0",
@@ -67,12 +68,12 @@
           "Microsoft.AspNetCore.Hosting": "5.0.0.0",
           "Microsoft.AspNetCore.Hosting.Server.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Html.Abstractions": "5.0.0.0",
-          "Microsoft.AspNetCore.Http.Abstractions": "5.0.0.0",
+          "Microsoft.AspNetCore.Http.Abstractions.Reference": "5.0.0.0",
           "Microsoft.AspNetCore.Http.Connections.Common": "5.0.0.0",
           "Microsoft.AspNetCore.Http.Connections": "5.0.0.0",
           "Microsoft.AspNetCore.Http": "5.0.0.0",
-          "Microsoft.AspNetCore.Http.Extensions": "5.0.0.0",
-          "Microsoft.AspNetCore.Http.Features": "5.0.0.0",
+          "Microsoft.AspNetCore.Http.Extensions.Reference": "5.0.0.0",
+          "Microsoft.AspNetCore.Http.Features.Reference": "5.0.0.0",
           "Microsoft.AspNetCore.HttpOverrides": "5.0.0.0",
           "Microsoft.AspNetCore.HttpsPolicy": "5.0.0.0",
           "Microsoft.AspNetCore.Identity": "5.0.0.0",
@@ -117,7 +118,7 @@
           "Microsoft.CSharp": "5.0.0.0",
           "Microsoft.Extensions.Caching.Abstractions": "5.0.0.0",
           "Microsoft.Extensions.Caching.Memory": "5.0.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "5.0.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions.Reference": "5.0.0.0",
           "Microsoft.Extensions.Configuration.Binder": "5.0.0.0",
           "Microsoft.Extensions.Configuration.CommandLine": "5.0.0.0",
           "Microsoft.Extensions.Configuration": "5.0.0.0",
@@ -131,7 +132,7 @@
           "Microsoft.Extensions.DependencyInjection": "5.0.0.0",
           "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions": "5.0.0.0",
           "Microsoft.Extensions.Diagnostics.HealthChecks": "5.0.0.0",
-          "Microsoft.Extensions.FileProviders.Abstractions": "5.0.0.0",
+          "Microsoft.Extensions.FileProviders.Abstractions.Reference": "5.0.0.0",
           "Microsoft.Extensions.FileProviders.Composite": "5.0.0.0",
           "Microsoft.Extensions.FileProviders.Embedded": "5.0.0.0",
           "Microsoft.Extensions.FileProviders.Physical": "5.0.0.0",
@@ -143,7 +144,7 @@
           "Microsoft.Extensions.Identity.Stores": "5.0.0.0",
           "Microsoft.Extensions.Localization.Abstractions": "5.0.0.0",
           "Microsoft.Extensions.Localization": "5.0.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "5.0.0.0",
+          "Microsoft.Extensions.Logging.Abstractions.Reference": "5.0.0.0",
           "Microsoft.Extensions.Logging.Configuration": "5.0.0.0",
           "Microsoft.Extensions.Logging.Console": "5.0.0.0",
           "Microsoft.Extensions.Logging.Debug": "5.0.0.0",
@@ -156,7 +157,7 @@
           "Microsoft.Extensions.Options.DataAnnotations": "5.0.0.0",
           "Microsoft.Extensions.WebEncoders": "5.0.0.0",
           "Microsoft.JSInterop": "5.0.0.0",
-          "Microsoft.Net.Http.Headers": "5.0.0.0",
+          "Microsoft.Net.Http.Headers.Reference": "5.0.0.0",
           "Microsoft.VisualBasic.Core": "10.0.6.0",
           "Microsoft.VisualBasic": "10.0.0.0",
           "Microsoft.Win32.Primitives": "5.0.0.0",
@@ -286,7 +287,7 @@
           "System.Text.Encoding.CodePages": "5.0.0.0",
           "System.Text.Encoding": "5.0.0.0",
           "System.Text.Encoding.Extensions": "5.0.0.0",
-          "System.Text.Encodings.Web": "5.0.0.0",
+          "System.Text.Encodings.Web.Reference": "5.0.0.0",
           "System.Text.Json": "5.0.0.0",
           "System.Text.RegularExpressions": "5.0.0.0",
           "System.Threading.Channels": "5.0.0.0",
@@ -338,7 +339,40 @@
           "lib/net5.0/DnsClient.dll": {}
         }
       },
+      "Microsoft.AspNetCore.Cors/2.2.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Extensions": "2.2.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "2.2.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Options": "6.0.0"
+        }
+      },
+      "Microsoft.AspNetCore.Http.Abstractions/2.2.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "2.2.0",
+          "System.Text.Encodings.Web": "4.5.0"
+        }
+      },
+      "Microsoft.AspNetCore.Http.Extensions/2.2.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "2.2.0",
+          "Microsoft.Net.Http.Headers": "2.2.0",
+          "System.Buffers": "4.5.1"
+        }
+      },
+      "Microsoft.AspNetCore.Http.Features/2.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "6.0.0"
+        }
+      },
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {},
+      "Microsoft.Extensions.Configuration.Abstractions/2.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "6.0.0"
+        }
+      },
       "Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0": {
         "runtime": {
           "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
@@ -350,6 +384,12 @@
           "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
         }
       },
+      "Microsoft.Extensions.FileProviders.Abstractions/2.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "6.0.0"
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/2.2.0": {},
       "Microsoft.Extensions.Options/6.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
@@ -377,6 +417,12 @@
         },
         "compile": {
           "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll": {}
+        }
+      },
+      "Microsoft.Net.Http.Headers/2.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "6.0.0",
+          "System.Buffers": "4.5.1"
         }
       },
       "Microsoft.NETCore.Platforms/5.0.0": {},
@@ -587,6 +633,7 @@
         }
       },
       "System.Security.Principal.Windows/5.0.0": {},
+      "System.Text.Encodings.Web/4.5.0": {},
       "AllLook.Database/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Options": "6.0.0",
@@ -701,7 +748,7 @@
         },
         "compileOnly": true
       },
-      "Microsoft.AspNetCore.Cors/5.0.0.0": {
+      "Microsoft.AspNetCore.Cors.Reference/5.0.0.0": {
         "compile": {
           "Microsoft.AspNetCore.Cors.dll": {}
         },
@@ -791,7 +838,7 @@
         },
         "compileOnly": true
       },
-      "Microsoft.AspNetCore.Http.Abstractions/5.0.0.0": {
+      "Microsoft.AspNetCore.Http.Abstractions.Reference/5.0.0.0": {
         "compile": {
           "Microsoft.AspNetCore.Http.Abstractions.dll": {}
         },
@@ -815,13 +862,13 @@
         },
         "compileOnly": true
       },
-      "Microsoft.AspNetCore.Http.Extensions/5.0.0.0": {
+      "Microsoft.AspNetCore.Http.Extensions.Reference/5.0.0.0": {
         "compile": {
           "Microsoft.AspNetCore.Http.Extensions.dll": {}
         },
         "compileOnly": true
       },
-      "Microsoft.AspNetCore.Http.Features/5.0.0.0": {
+      "Microsoft.AspNetCore.Http.Features.Reference/5.0.0.0": {
         "compile": {
           "Microsoft.AspNetCore.Http.Features.dll": {}
         },
@@ -1091,7 +1138,7 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.Configuration.Abstractions/5.0.0.0": {
+      "Microsoft.Extensions.Configuration.Abstractions.Reference/5.0.0.0": {
         "compile": {
           "Microsoft.Extensions.Configuration.Abstractions.dll": {}
         },
@@ -1175,7 +1222,7 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.FileProviders.Abstractions/5.0.0.0": {
+      "Microsoft.Extensions.FileProviders.Abstractions.Reference/5.0.0.0": {
         "compile": {
           "Microsoft.Extensions.FileProviders.Abstractions.dll": {}
         },
@@ -1247,7 +1294,7 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.Logging.Abstractions/5.0.0.0": {
+      "Microsoft.Extensions.Logging.Abstractions.Reference/5.0.0.0": {
         "compile": {
           "Microsoft.Extensions.Logging.Abstractions.dll": {}
         },
@@ -1325,7 +1372,7 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Net.Http.Headers/5.0.0.0": {
+      "Microsoft.Net.Http.Headers.Reference/5.0.0.0": {
         "compile": {
           "Microsoft.Net.Http.Headers.dll": {}
         },
@@ -2105,7 +2152,7 @@
         },
         "compileOnly": true
       },
-      "System.Text.Encodings.Web/5.0.0.0": {
+      "System.Text.Encodings.Web.Reference/5.0.0.0": {
         "compile": {
           "System.Text.Encodings.Web.dll": {}
         },
@@ -2300,6 +2347,34 @@
       "path": "dnsclient/1.6.0",
       "hashPath": "dnsclient.1.6.0.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.Cors/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LFlTM3ThS3ZCILuKnjy8HyK9/IlDh3opogdbCVx6tMGyDzTQBgMPXLjGDLtMk5QmLDCcP3l1TO3z/+1viA8GUg==",
+      "path": "microsoft.aspnetcore.cors/2.2.0",
+      "hashPath": "microsoft.aspnetcore.cors.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Http.Abstractions/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Nxs7Z1q3f1STfLYKJSVXCs1iBl+Ya6E8o4Oy1bCxJ/rNI44E/0f6tbsrVqAWfB7jlnJfyaAtIalBVxPKUPQb4Q==",
+      "path": "microsoft.aspnetcore.http.abstractions/2.2.0",
+      "hashPath": "microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Http.Extensions/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2DgZ9rWrJtuR7RYiew01nGRzuQBDaGHGmK56Rk54vsLLsCdzuFUPqbDTJCS1qJQWTbmbIQ9wGIOjpxA1t0l7/w==",
+      "path": "microsoft.aspnetcore.http.extensions/2.2.0",
+      "hashPath": "microsoft.aspnetcore.http.extensions.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Http.Features/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ziFz5zH8f33En4dX81LW84I6XrYXKf9jg6aM39cM+LffN9KJahViKZ61dGMSO2gd3e+qe5yBRwsesvyqlZaSMg==",
+      "path": "microsoft.aspnetcore.http.features/2.2.0",
+      "hashPath": "microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512"
+    },
     "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
       "type": "package",
       "serviceable": true,
@@ -2307,12 +2382,33 @@
       "path": "microsoft.extensions.apidescription.server/3.0.0",
       "hashPath": "microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512"
     },
+    "Microsoft.Extensions.Configuration.Abstractions/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-65MrmXCziWaQFrI0UHkQbesrX5wTwf9XPjY5yFm/VkgJKFJ5gqvXRoXjIZcf2wLi5ZlwGz/oMYfyURVCWbM5iw==",
+      "path": "microsoft.extensions.configuration.abstractions/2.2.0",
+      "hashPath": "microsoft.extensions.configuration.abstractions.2.2.0.nupkg.sha512"
+    },
     "Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-xlzi2IYREJH3/m6+lUrQlujzX8wDitm4QGnUu6kUXTQAWPuZY8i+ticFJbzfqaetLA6KR/rO6Ew/HuYD+bxifg==",
       "path": "microsoft.extensions.dependencyinjection.abstractions/6.0.0",
       "hashPath": "microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.FileProviders.Abstractions/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EcnaSsPTqx2MGnHrmWOD0ugbuuqVT8iICqSqPzi45V5/MA1LjUNb0kwgcxBGqizV1R+WeBK7/Gw25Jzkyk9bIw==",
+      "path": "microsoft.extensions.fileproviders.abstractions/2.2.0",
+      "hashPath": "microsoft.extensions.fileproviders.abstractions.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging.Abstractions/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-B2WqEox8o+4KUOpL7rZPyh6qYjik8tHi2tN8Z9jZkHzED8ElYgZa/h6K+xliB435SqUcWT290Fr2aa8BtZjn8A==",
+      "path": "microsoft.extensions.logging.abstractions/2.2.0",
+      "hashPath": "microsoft.extensions.logging.abstractions.2.2.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Options/6.0.0": {
       "type": "package",
@@ -2327,6 +2423,13 @@
       "sha512": "sha512-9+PnzmQFfEFNR9J2aDTfJGGupShHjOuGw4VUv+JB044biSHrnmCIMD+mJHmb2H7YryrfBEXDurxQ47gJZdCKNQ==",
       "path": "microsoft.extensions.primitives/6.0.0",
       "hashPath": "microsoft.extensions.primitives.6.0.0.nupkg.sha512"
+    },
+    "Microsoft.Net.Http.Headers/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iZNkjYqlo8sIOI0bQfpsSoMTmB/kyvmV2h225ihyZT33aTp48ZpF6qYnXxzSXmHt8DpBAwBTX+1s1UFLbYfZKg==",
+      "path": "microsoft.net.http.headers/2.2.0",
+      "hashPath": "microsoft.net.http.headers.2.2.0.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/5.0.0": {
       "type": "package",
@@ -2440,6 +2543,13 @@
       "path": "system.security.principal.windows/5.0.0",
       "hashPath": "system.security.principal.windows.5.0.0.nupkg.sha512"
     },
+    "System.Text.Encodings.Web/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Xg4G4Indi4dqP1iuAiMSwpiWS54ZghzR644OtsRCm/m/lBMG8dUBhLVN7hLm8NNrNTR+iGbshCPTwrvxZPlm4g==",
+      "path": "system.text.encodings.web/4.5.0",
+      "hashPath": "system.text.encodings.web.4.5.0.nupkg.sha512"
+    },
     "AllLook.Database/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -2525,7 +2635,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.AspNetCore.Cors/5.0.0.0": {
+    "Microsoft.AspNetCore.Cors.Reference/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -2600,7 +2710,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.AspNetCore.Http.Abstractions/5.0.0.0": {
+    "Microsoft.AspNetCore.Http.Abstractions.Reference/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -2620,12 +2730,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.AspNetCore.Http.Extensions/5.0.0.0": {
+    "Microsoft.AspNetCore.Http.Extensions.Reference/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.AspNetCore.Http.Features/5.0.0.0": {
+    "Microsoft.AspNetCore.Http.Features.Reference/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -2850,7 +2960,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.Configuration.Abstractions/5.0.0.0": {
+    "Microsoft.Extensions.Configuration.Abstractions.Reference/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -2920,7 +3030,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.FileProviders.Abstractions/5.0.0.0": {
+    "Microsoft.Extensions.FileProviders.Abstractions.Reference/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -2980,7 +3090,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.Logging.Abstractions/5.0.0.0": {
+    "Microsoft.Extensions.Logging.Abstractions.Reference/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -3045,7 +3155,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Net.Http.Headers/5.0.0.0": {
+    "Microsoft.Net.Http.Headers.Reference/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -3695,7 +3805,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Text.Encodings.Web/5.0.0.0": {
+    "System.Text.Encodings.Web.Reference/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

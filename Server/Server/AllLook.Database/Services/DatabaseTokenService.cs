@@ -21,8 +21,19 @@ namespace AllLook.Database.Services
 
         }
 
-        public Token GetToken() => _token.Find(token => true).Single();
-        public void AddToken(Token token) => _token.InsertOne(token);
+        public Token GetToken() => _token.Find(token => true).SingleOrDefault();
+        public void AddToken(Token token)
+        {
+            try
+            {
+                _token.InsertOne(token);
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Błąd przesłania tokenu do bazy");
+            }
+        }
         public void DropToken() => _token.DeleteMany(x => true);
     }
 }

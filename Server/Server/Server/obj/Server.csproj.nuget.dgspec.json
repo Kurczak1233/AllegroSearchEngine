@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Server\\Server.csproj": {}
+    "C:\\Users\\48502\\source\\repos\\AllLookProject\\Server\\Server\\Server\\Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\AllLook.Database\\AllLook.Database.csproj": {
+    "C:\\Users\\48502\\source\\repos\\AllLookProject\\Server\\Server\\AllLook.Database\\AllLook.Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\AllLook.Database\\AllLook.Database.csproj",
+        "projectUniqueName": "C:\\Users\\48502\\source\\repos\\AllLookProject\\Server\\Server\\AllLook.Database\\AllLook.Database.csproj",
         "projectName": "AllLook.Database",
-        "projectPath": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\AllLook.Database\\AllLook.Database.csproj",
+        "projectPath": "C:\\Users\\48502\\source\\repos\\AllLookProject\\Server\\Server\\AllLook.Database\\AllLook.Database.csproj",
         "packagesPath": "C:\\Users\\48502\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\AllLook.Database\\obj\\",
+        "outputPath": "C:\\Users\\48502\\source\\repos\\AllLookProject\\Server\\Server\\AllLook.Database\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Models\\Models.csproj": {
-                "projectPath": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Models\\Models.csproj"
+              "C:\\Users\\48502\\source\\repos\\AllLookProject\\Server\\Server\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\48502\\source\\repos\\AllLookProject\\Server\\Server\\Models\\Models.csproj"
               }
             }
           }
@@ -48,6 +48,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[5.0.15, )"
+            },
             "Microsoft.Extensions.Options": {
               "target": "Package",
               "version": "[6.0.0, )"
@@ -76,14 +80,14 @@
         }
       }
     },
-    "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Models\\Models.csproj": {
+    "C:\\Users\\48502\\source\\repos\\AllLookProject\\Server\\Server\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Models\\Models.csproj",
+        "projectUniqueName": "C:\\Users\\48502\\source\\repos\\AllLookProject\\Server\\Server\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Models\\Models.csproj",
+        "projectPath": "C:\\Users\\48502\\source\\repos\\AllLookProject\\Server\\Server\\Models\\Models.csproj",
         "packagesPath": "C:\\Users\\48502\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Models\\obj\\",
+        "outputPath": "C:\\Users\\48502\\source\\repos\\AllLookProject\\Server\\Server\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -140,14 +144,14 @@
         }
       }
     },
-    "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Server\\Server.csproj": {
+    "C:\\Users\\48502\\source\\repos\\AllLookProject\\Server\\Server\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Server\\Server.csproj",
+        "projectUniqueName": "C:\\Users\\48502\\source\\repos\\AllLookProject\\Server\\Server\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Server\\Server.csproj",
+        "projectPath": "C:\\Users\\48502\\source\\repos\\AllLookProject\\Server\\Server\\Server\\Server.csproj",
         "packagesPath": "C:\\Users\\48502\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Server\\obj\\",
+        "outputPath": "C:\\Users\\48502\\source\\repos\\AllLookProject\\Server\\Server\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -168,11 +172,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\AllLook.Database\\AllLook.Database.csproj": {
-                "projectPath": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\AllLook.Database\\AllLook.Database.csproj"
+              "C:\\Users\\48502\\source\\repos\\AllLookProject\\Server\\Server\\AllLook.Database\\AllLook.Database.csproj": {
+                "projectPath": "C:\\Users\\48502\\source\\repos\\AllLookProject\\Server\\Server\\AllLook.Database\\AllLook.Database.csproj"
               },
-              "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Models\\Models.csproj": {
-                "projectPath": "C:\\Users\\48502\\source\\repos\\Allegro\\AllegroSearchEngine\\Server\\Server\\Models\\Models.csproj"
+              "C:\\Users\\48502\\source\\repos\\AllLookProject\\Server\\Server\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\48502\\source\\repos\\AllLookProject\\Server\\Server\\Models\\Models.csproj"
               }
             }
           }
@@ -187,6 +191,18 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[5.0.15, )"
+            },
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.15.0, )"
