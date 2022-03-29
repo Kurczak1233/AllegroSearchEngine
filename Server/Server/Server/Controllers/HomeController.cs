@@ -25,7 +25,6 @@ namespace Server.Controllers
         private readonly IDatabaseTokenService _databaseTokenService;
         private readonly IDatabaseProductService _databaseProductService;
         private readonly IOptions<ClientSettings> _client;
-        private readonly HttpClient _httpClient;
 
         public HomeController(ISearchService searchService,
             IAllegroService allegroService,
@@ -33,8 +32,8 @@ namespace Server.Controllers
             IOptions<ClientSettings> options,
             IDatabaseDeviceFlowAuthorization deviceFlowAuth,
             IDatabaseTokenService databaseTokenService,
-            IDatabaseProductService databaseProductService,
-            HttpClient httpClient
+            IDatabaseProductService databaseProductService
+
         )
         {
             _searchService = searchService;
@@ -44,9 +43,9 @@ namespace Server.Controllers
             _deviceFlowAuth = deviceFlowAuth;
             _databaseTokenService = databaseTokenService;
             _databaseProductService = databaseProductService;
-            _httpClient = httpClient;
+
         }
-        
+
         [HttpGet("GetAuthorization")]
         public async Task<string> GetAuthorization()
         {
