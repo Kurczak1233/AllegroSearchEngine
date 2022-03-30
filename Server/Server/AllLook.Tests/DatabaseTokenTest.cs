@@ -43,6 +43,22 @@ namespace AllLook.Tests
           
         }
 
+        [Fact]
+        public void There_is_token_in_database()
+        {
+            //Arrange
+            DatabaseTokenService service = new DatabaseTokenService(_options);
+
+            //Act
+            var token = service.GetToken();
+
+            //Assert
+            Assert.NotNull(token);
+
+
+        }
+
+
         //[Fact]
         //public void Is_DropToken_Working()
         //{
